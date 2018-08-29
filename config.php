@@ -11,13 +11,16 @@ if(!defined("HOST")){
   define('HOST','localhost');
 }
 if(!defined("DB")){
-  define('DB','id6581120_iot');
+  //define('DB','id6581120_iot');
+  define('DB','iot_dados');
 }
 if(!defined("USER")){
-  define('USER','id6581120_brunoorosco');
+  //define('USER','id6581120_brunoorosco');
+  define('USER','root');
 }
 if(!defined("PASS")){
-  define('PASS','orosco0329');
+  //define('PASS','orosco0329');
+  define('PASS','');
 }
 
 if(!defined("CHARSET")){

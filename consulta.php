@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html >
+<html>
 <head>
   <meta charset="UTF-8">
   <title>Consulta DB</title>
@@ -25,9 +25,9 @@ $resultado = @mysqli_query($link,$query) or die (mysqli_error($link));
 <form action="resposta.php" method="POST">
 
   <select name="chipId">
-  
+
   <?php
- 
+
    $link = DBConnect();
 
     while ($row=mysqli_fetch_array($resultado))
@@ -40,12 +40,12 @@ $resultado = @mysqli_query($link,$query) or die (mysqli_error($link));
    var_dump($row);
     DBClose($link);
 
-    
+
   ?>
   </select><br><br>
   <input type="date" name="fecha" ><br><br>
   <input type="submit" name="Enviar" >
 </form>
 
-</body> 
+</body>
 </html>

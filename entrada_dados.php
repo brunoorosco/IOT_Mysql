@@ -10,7 +10,7 @@ $temperatura = $_GET["temp"];
 if((!empty($serie) && (!empty($temperatura))))
 {
 
-$query = ("INSERT INTO `IOT_dht`(`id`, `data`, `temp`, `serie`)  VALUES (NULL, CURRENT_TIMESTAMP, '$temperatura', '$serie')" );
+$query = ("INSERT INTO `IOT_dht`(`id`, `data/hora`, `temp`, `chipId`)  VALUES (NULL, CURRENT_TIMESTAMP, '$temperatura', '$serie')" );
 
 //header("Location:index.html");
 //);

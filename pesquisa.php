@@ -15,7 +15,7 @@
 					Escolha o Equipamento: <select name="chipId" ><br>
 						<?php
 						   require_once 'database.php';
-							$query = "SELECT DISTINCT `serie` FROM `IOT_dht` WHERE 1";
+							$query = "SELECT DISTINCT `chipid` FROM `IOT_dht` WHERE 1";
 							$resultado=DBExecute($query);
 							while ($row=mysqli_fetch_array($resultado))
 							      { echo "<option>";
@@ -44,16 +44,19 @@
 			//$dataArray = explode("-", $dataPesquisa);
 			//$dataPesquisa = $dataArray[0] . "-" . $dataArray[1];
 
-			$sql = "SELECT * FROM IOT_dht WHERE data LIKE '%$dataPesquisa%' AND serie LIKE '$equi'"; //LIKE
+			$sql = "SELECT * FROM IOT_dht WHERE data_hora LIKE '%$dataPesquisa%' AND chipID LIKE '$equi'"; //LIKE
 
 		   }else {
 		   		$dataAtual = date('Y-m-d');
 				//echo "Data Atual: ".$dataAtual;
-				$sql = "SELECT * FROM IOT_dht WHERE data LIKE '%$dataAtual%' AND serie LIKE '$equi'" ; //LIKE
+				$sql = "SELECT * FROM IOT_dht WHERE data_hora LIKE '%$dataAtual%' AND chipID LIKE '$equi'" ; //LIKE
+
+
 			 }
 
 
 			$stmt = DBExecute($sql);
+
 			$total_rows = mysqli_num_rows($stmt);
 
 		//	echo "<table><tr><th>Equipamento</th><th>Data/hora</th><th>Temperatura</th><th>Umidade</th></tr>";
@@ -64,7 +67,7 @@
 			echo "</td></tr></tfoot><tbody>";
 
 			while ($linha=mysqli_fetch_array($stmt)){
-						echo "<tr><th>".$linha['serie']."</th><th>".$linha['data']."</th><th>".$linha['temp']."</th><th>teste4</th></tr>";	}
+						echo "<tr><th>".$linha['chipID']."</th><th>".$linha['data_hora']."</th><th>".$linha['TEMP']."</th><th>".$linha['UMID']."</th></tr>";	}
 
 			echo "</tr></tbody></table>";}
 			?>
@@ -73,18 +76,16 @@
 	<canvas id="line-chart" width="300" height="300"></canvas>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"> </script>
+
 <script>
 var chartGraph = new Chart(ctx,{
 	type:'line',
-
-	
-
 
 });
 
 
 
-
+</script>
 
 
 </body>
