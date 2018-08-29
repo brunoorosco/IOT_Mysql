@@ -1,0 +1,50 @@
+html, body {
+  height: 100%;
+
+}
+
+.input{ 
+    padding:10px;
+    display:block;
+    border:none;
+    border-bottom:1px solid #ccc;
+    width:97%
+
+}
+
+.w3-container,.w3-panel{
+    margin: 5px;
+    height: 11%;
+    padding:0.10em 30%;
+    max-width: 600px;
+
+}
+
+h2{
+    font-family:"Segoe UI",Arial,sans-serif;
+    font-weight:500;
+    margin:20px 0;
+    font-size  : 60px;
+}
+
+.w3-orange{
+    color:#000!important;
+    background-color:#ff9800!important;
+    width: 100%;
+}
+
+.w3-btn,.w3-button{
+    border: 1px solid #bdbdbd;
+    display:inline-block;
+    padding:10px 20%;
+    vertical-align:middle;
+    overflow:hidden;
+    text-decoration:none;
+    color:silver;
+    background-color:inherit;
+    text-align:center;
+    cursor:pointer;
+    white-space:nowrap;
+    font-size  : 30px;
+    width: 100%;
+}
